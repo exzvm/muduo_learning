@@ -13,6 +13,14 @@ CMakeFiles/mymuduo.dir/DefaultPoller.o
  /home/cpp/muduo_learning/mymuduo/Poller.h
  /home/cpp/muduo_learning/mymuduo/Timestamp.h
  /home/cpp/muduo_learning/mymuduo/noncopyable.h
+CMakeFiles/mymuduo.dir/EPollPoller.o
+ /home/cpp/muduo_learning/mymuduo/Channel.h
+ /home/cpp/muduo_learning/mymuduo/EPollPoller.cc
+ /home/cpp/muduo_learning/mymuduo/EPollPoller.h
+ /home/cpp/muduo_learning/mymuduo/Logger.h
+ /home/cpp/muduo_learning/mymuduo/Poller.h
+ /home/cpp/muduo_learning/mymuduo/Timestamp.h
+ /home/cpp/muduo_learning/mymuduo/noncopyable.h
 CMakeFiles/mymuduo.dir/EventLoop.o
  /home/cpp/muduo_learning/mymuduo/EventLoop.cc
  /home/cpp/muduo_learning/mymuduo/EventLoop.h
