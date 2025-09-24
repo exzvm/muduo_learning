@@ -337,6 +337,10 @@ Callbacks.h
 /home/cpp/muduo_learning/mymuduo/Callbacks.h
 EventLoopThreadPool.h
 /home/cpp/muduo_learning/mymuduo/EventLoopThreadPool.h
+TcpConnection.h
+/home/cpp/muduo_learning/mymuduo/TcpConnection.h
+Buffer.h
+/home/cpp/muduo_learning/mymuduo/Buffer.h
 functional
 -
 string

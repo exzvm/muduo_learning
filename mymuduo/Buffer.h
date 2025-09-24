@@ -62,6 +62,27 @@ public:
       retrieveAll();
     }
   }
+
+  // 把onMessage函数上报的Buffer数据，转成string类型的数据返回
+  std::string retrieveAllAsString() {
+    return retrieveAsString(readableBytes()); // 应用可读取数据长度
+  }
+
+  void retrieveAll() {
+    readerIndex_ = kCheapPrepend;
+    writerIndex_ = kCheapPrepend;
+  }
+
+  std::string retrieveAsString(size_t len) {
+    std::string result(peek(), len);
+    retrieve(len); // 对缓冲区进行复位操作
+    return result;
+  }
+
+  // 返回缓冲区中可读数据的起始地址
+  const char* peek() const {
+    return begin() + readerIndex_;
+  }
 private:
   char* begin() {
     // it.operator*().operator&()
@@ -73,7 +94,7 @@ private:
   }
 
   /**
-   * 
+   * 扩容函数
    */
   void makeSpace(size_t len) {
     if (writableBytes() + prependableBytes() < len + kCheapPrepend) {
@@ -86,29 +107,6 @@ private:
       readerIndex_ = kCheapPrepend;
       writerIndex_ = readerIndex_ + readable;
     }
-  }
-
-  // 返回缓冲区中可读数据的起始地址
-  const char* peek() const {
-    return begin() + readerIndex_;
-  }
-
-
-
-  void retrieveAll() {
-    readerIndex_ = kCheapPrepend;
-    writerIndex_ = kCheapPrepend;
-  }
-
-  // 把onMessage函数上报的Buffer数据，转成string类型的数据返回
-  std::string retrieveAllAsString() {
-    return retrieveAsString(readableBytes()); // 应用可读取数据长度
-  }
-
-  std::string retrieveAsString(size_t len) {
-    std::string result(peek(), len);
-    retrieve(len); // 对缓冲区进行复位操作
-    return result;
   }
 
   std::vector<char> buffer_;

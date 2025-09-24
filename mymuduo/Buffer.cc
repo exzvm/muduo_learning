@@ -13,8 +13,9 @@ ssize_t Buffer::readFd(int fd, int *saveErrno) {
   const size_t writable = writableBytes();
   vec[0].iov_base = begin() + writerIndex_;
   vec[0].iov_len = writable;
-  vec[0].iov_base = extrabuf;
-  vec[0].iov_len = sizeof extrabuf;
+  // 这里是 vec[1] 而不是 vec[0]，和上面重复了
+  vec[1].iov_base = extrabuf;
+  vec[1].iov_len = sizeof extrabuf;
 
   const int iovcnt = (writable < sizeof extrabuf) ? 2 : 1;
   const ssize_t n = ::readv(fd, vec, iovcnt);
