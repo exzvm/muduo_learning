@@ -14,7 +14,7 @@ class Channel;
  * epoll_ctl   add/mod/del
  * epoll_wait
  */
-class EPollPoller : Poller
+class EPollPoller : public Poller
 {
 public:
   EPollPoller(EventLoop *loop);
