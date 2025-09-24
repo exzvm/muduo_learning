@@ -96,6 +96,7 @@ CMakeFiles/mymuduo.dir/TcpConnection.o
  /home/cpp/muduo_learning/mymuduo/noncopyable.h
 CMakeFiles/mymuduo.dir/TcpServer.o
  /home/cpp/muduo_learning/mymuduo/Acceptor.h
+ /home/cpp/muduo_learning/mymuduo/Buffer.h
  /home/cpp/muduo_learning/mymuduo/Callbacks.h
  /home/cpp/muduo_learning/mymuduo/Channel.h
  /home/cpp/muduo_learning/mymuduo/CurrentThread.h
@@ -104,6 +105,7 @@ CMakeFiles/mymuduo.dir/TcpServer.o
  /home/cpp/muduo_learning/mymuduo/InetAddress.h
  /home/cpp/muduo_learning/mymuduo/Logger.h
  /home/cpp/muduo_learning/mymuduo/Socket.h
+ /home/cpp/muduo_learning/mymuduo/TcpConnection.h
  /home/cpp/muduo_learning/mymuduo/TcpServer.cc
  /home/cpp/muduo_learning/mymuduo/TcpServer.h
  /home/cpp/muduo_learning/mymuduo/Timestamp.h
