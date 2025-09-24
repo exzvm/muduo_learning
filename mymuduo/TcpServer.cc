@@ -35,7 +35,7 @@ TcpServer::~TcpServer()
     // 这个局部的shared_ptr智能指针对象，出右括号，可以自动释放new出来的TcpConnection对象资源了
     TcpConnectionPtr conn(item.second);
     item.second.reset();
-    conn->getLoop->runInLoop(
+    conn->getLoop()->runInLoop(
       std::bind(&TcpConnection::connectDestroyed, conn)
     );
   }
@@ -70,7 +70,7 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr) {
   sockaddr_in local;
   ::bzero(&local, sizeof local);
   socklen_t addrlen = sizeof local;
-  if (::getsockname(sockfd, (sockaddr*)local, &addrlen) < 0) {
+  if (::getsockname(sockfd, (sockaddr*)&local, &addrlen) < 0) {
     LOG_ERROR("sockets::getLocalAddr");
   }
 
